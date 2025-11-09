@@ -1,0 +1,41 @@
++ PROJ=/scratch/ekata/projects/mcqa/mcqa-synergy
++ SCRIPT=/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module_scripts/module1_synergy_TEN.py
++ DATA=/scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
++ OUT=/scratch/ekata/projects/mcqa/mcqa-synergy/results/Belebele
++ MODEL=meta-llama/Meta-Llama-3.1-8B-Instruct
++ mkdir -p /scratch/ekata/projects/mcqa/mcqa-synergy/results/Belebele /scratch/ekata/projects/mcqa/mcqa-synergy/results/log_out
++ source /scratch/ekata/pyenv/bin/activate
+++ '[' -n x ']'
+++ SCRIPT_PATH=/scratch/ekata/pyenv/bin/activate
+++ '[' /scratch/ekata/pyenv/bin/activate = /var/spool/slurmd/job6378803/slurm_script ']'
+++ deactivate nondestructive
+++ unset -f pydoc
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ hash -r
+++ '[' -z '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/scratch/ekata/pyenv
+++ '[' linux-gnu = cygwin ']'
+++ '[' linux-gnu = msys ']'
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/scratch/ekata/pyenv/mcqa/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+++ PATH=/scratch/ekata/pyenv/bin:/scratch/ekata/pyenv/mcqa/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+++ export PATH
+++ '[' x '!=' x ']'
++++ basename /scratch/ekata/pyenv
+++ VIRTUAL_ENV_PROMPT='(pyenv) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(pyenv) '
+++ export PS1
+++ alias pydoc
+++ true
+++ hash -r
++ cd /scratch/ekata/projects/mcqa/mcqa-synergy
++ python -u /scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module_scripts/module1_synergy_TEN.py --data_csv /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv --out_dir /scratch/ekata/projects/mcqa/mcqa-synergy/results/Belebele --model_name meta-llama/Meta-Llama-3.1-8B-Instruct --device cuda:0 --max_samples 1000 --batch_size 8 --dtype float16
+python: can't open file '/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module_scripts/module1_synergy_TEN.py': [Errno 2] No such file or directory

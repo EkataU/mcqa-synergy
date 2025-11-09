@@ -1,0 +1,44 @@
+=== Module 1: P(TEN) layer-wise analysis ===
+Job ID : 6378821
+Host   : gpu02
+Time   : Sat Nov  8 09:43:38 PM PST 2025
+CUDA GPUs:
+Sat Nov  8 21:43:38 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
+|  0%   27C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python path : /scratch/ekata/pyenv/bin/python
+Python ver  : Python 3.9.21
+Data CSV : /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+Out dir  : /scratch/ekata/projects/mcqa/mcqa-synergy/results
+Model    : meta-llama/Meta-Llama-3.1-8B-Instruct
+python: can't open file '/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module1_synergy_TEN.py': [Errno 2] No such file or directory
+=== Module 1 finished at: Sat Nov  8 09:43:38 PM PST 2025 ===
+Result files in: /scratch/ekata/projects/mcqa/mcqa-synergy/results
+total 4.3M
+drwxrwxr-x 2 ekata ekata 4.0K Nov  8 21:15 Belebele
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 19:50 layer_metrics_EN_by_dialect.csv
+-rw-rw-r-- 1 ekata ekata 5.1K Nov  8 19:50 layer_metrics_EN.csv
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 18:20 layer_metrics_T_by_dialect.csv
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 18:20 layer_metrics_T.csv
+drwxr-xr-x 2 ekata ekata 4.0K Nov  8 21:15 log_out
+-rw-rw-r-- 1 ekata ekata  22K Nov  8 19:50 pca_centroids_EN.csv
+-rw-rw-r-- 1 ekata ekata  22K Nov  8 18:20 pca_centroids_T.csv
+-rw-rw-r-- 1 ekata ekata 1.6M Nov  8 19:50 pca_points_EN.csv
+-rw-rw-r-- 1 ekata ekata 1.6M Nov  8 18:20 pca_points_T.csv

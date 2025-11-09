@@ -1,0 +1,103 @@
+=== Module 1: P(TEN) layer-wise analysis ===
+Job ID : 6378824
+Host   : gpu02
+Time   : Sat Nov  8 09:52:21 PM PST 2025
+CUDA GPUs:
+Sat Nov  8 21:52:21 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
+|  0%   26C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python path : /scratch/ekata/pyenv/bin/python
+Python ver  : Python 3.9.21
+Data CSV : /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+Out dir  : /scratch/ekata/projects/mcqa/mcqa-synergy/results
+Model    : meta-llama/Meta-Llama-3.1-8B-Instruct
+`torch_dtype` is deprecated! Use `dtype` instead!
+[Module1-TEN] Loading data from: /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+[Module1-TEN] Total rows with valid correct_answer_num ∈ {1..4}: 900
+[Module1-TEN] Rows with English passage available: 900
+[Module1-TEN] Using all 900 rows (<= max_samples)
+[Module1-TEN] No HF token found; assuming cached login/models.
+[Module1-TEN] Loading model: meta-llama/Meta-Llama-3.1-8B-Instruct
+[Module1-TEN] Device: cuda:0, dtype: float16
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.18it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.18it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.19it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.71it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.47it/s]
+[Module1-TEN] No bias term found in lm_head; setting lm_b = 0
+[Module1-TEN] Resolving digit token IDs for labels 1,2,3,4
+[Module1-TEN] Digit IDs: {1: 16, 2: 17, 3: 18, 4: 19}
+[Module1-TEN] Collecting hidden states + logits for 900 examples (P(TEN))
+[Module1-TEN] Forward batches:   0%|          | 0/113 [00:00<?, ?it/s][Module1-TEN] Forward batches:   1%|          | 1/113 [00:01<01:58,  1.06s/it][Module1-TEN] Forward batches:   2%|▏         | 2/113 [00:01<01:35,  1.16it/s][Module1-TEN] Forward batches:   3%|▎         | 3/113 [00:02<01:39,  1.11it/s][Module1-TEN] Forward batches:   4%|▎         | 4/113 [00:03<01:28,  1.23it/s][Module1-TEN] Forward batches:   4%|▍         | 5/113 [00:04<01:29,  1.21it/s][Module1-TEN] Forward batches:   5%|▌         | 6/113 [00:05<01:25,  1.25it/s][Module1-TEN] Forward batches:   6%|▌         | 7/113 [00:05<01:22,  1.29it/s][Module1-TEN] Forward batches:   7%|▋         | 8/113 [00:06<01:23,  1.26it/s][Module1-TEN] Forward batches:   8%|▊         | 9/113 [00:07<01:23,  1.25it/s][Module1-TEN] Forward batches:   9%|▉         | 10/113 [00:08<01:18,  1.31it/s][Module1-TEN] Forward batches:  10%|▉         | 11/113 [00:09<01:29,  1.13it/s][Module1-TEN] Forward batches:  11%|█         | 12/113 [00:09<01:22,  1.22it/s][Module1-TEN] Forward batches:  12%|█▏        | 13/113 [00:10<01:29,  1.12it/s][Module1-TEN] Forward batches:  12%|█▏        | 14/113 [00:11<01:29,  1.10it/s][Module1-TEN] Forward batches:  13%|█▎        | 15/113 [00:13<01:37,  1.01it/s][Module1-TEN] Forward batches:  14%|█▍        | 16/113 [00:14<01:35,  1.02it/s][Module1-TEN] Forward batches:  15%|█▌        | 17/113 [00:15<01:34,  1.02it/s][Module1-TEN] Forward batches:  16%|█▌        | 18/113 [00:15<01:31,  1.04it/s][Module1-TEN] Forward batches:  17%|█▋        | 19/113 [00:16<01:27,  1.08it/s][Module1-TEN] Forward batches:  18%|█▊        | 20/113 [00:17<01:27,  1.06it/s][Module1-TEN] Forward batches:  19%|█▊        | 21/113 [00:18<01:23,  1.10it/s][Module1-TEN] Forward batches:  19%|█▉        | 22/113 [00:19<01:22,  1.10it/s][Module1-TEN] Forward batches:  20%|██        | 23/113 [00:20<01:21,  1.10it/s][Module1-TEN] Forward batches:  21%|██        | 24/113 [00:21<01:34,  1.06s/it][Module1-TEN] Forward batches:  22%|██▏       | 25/113 [00:22<01:30,  1.03s/it][Module1-TEN] Forward batches:  23%|██▎       | 26/113 [00:23<01:26,  1.01it/s][Module1-TEN] Forward batches:  24%|██▍       | 27/113 [00:24<01:25,  1.01it/s][Module1-TEN] Forward batches:  25%|██▍       | 28/113 [00:25<01:29,  1.05s/it][Module1-TEN] Forward batches:  26%|██▌       | 29/113 [00:26<01:25,  1.02s/it][Module1-TEN] Forward batches:  27%|██▋       | 30/113 [00:27<01:24,  1.02s/it][Module1-TEN] Forward batches:  27%|██▋       | 31/113 [00:28<01:20,  1.02it/s][Module1-TEN] Forward batches:  28%|██▊       | 32/113 [00:29<01:18,  1.03it/s][Module1-TEN] Forward batches:  29%|██▉       | 33/113 [00:30<01:17,  1.04it/s][Module1-TEN] Forward batches:  30%|███       | 34/113 [00:31<01:16,  1.04it/s][Module1-TEN] Forward batches:  31%|███       | 35/113 [00:32<01:12,  1.08it/s][Module1-TEN] Forward batches:  32%|███▏      | 36/113 [00:33<01:23,  1.09s/it][Module1-TEN] Forward batches:  33%|███▎      | 37/113 [00:34<01:17,  1.01s/it][Module1-TEN] Forward batches:  34%|███▎      | 38/113 [00:35<01:19,  1.06s/it][Module1-TEN] Forward batches:  35%|███▍      | 39/113 [00:37<01:20,  1.09s/it][Module1-TEN] Forward batches:  35%|███▌      | 40/113 [00:38<01:27,  1.20s/it][Module1-TEN] Forward batches:  36%|███▋      | 41/113 [00:39<01:25,  1.19s/it][Module1-TEN] Forward batches:  37%|███▋      | 42/113 [00:40<01:27,  1.23s/it][Module1-TEN] Forward batches:  38%|███▊      | 43/113 [00:42<01:24,  1.21s/it][Module1-TEN] Forward batches:  39%|███▉      | 44/113 [00:43<01:20,  1.17s/it][Module1-TEN] Forward batches:  40%|███▉      | 45/113 [00:44<01:23,  1.23s/it][Module1-TEN] Forward batches:  41%|████      | 46/113 [00:45<01:23,  1.25s/it][Module1-TEN] Forward batches:  42%|████▏     | 47/113 [00:47<01:21,  1.24s/it][Module1-TEN] Forward batches:  42%|████▏     | 48/113 [00:48<01:20,  1.23s/it][Module1-TEN] Forward batches:  43%|████▎     | 49/113 [00:50<01:31,  1.42s/it][Module1-TEN] Forward batches:  44%|████▍     | 50/113 [00:51<01:24,  1.34s/it][Module1-TEN] Forward batches:  45%|████▌     | 51/113 [00:52<01:17,  1.25s/it][Module1-TEN] Forward batches:  46%|████▌     | 52/113 [00:53<01:14,  1.22s/it][Module1-TEN] Forward batches:  47%|████▋     | 53/113 [00:55<01:18,  1.30s/it][Module1-TEN] Forward batches:  48%|████▊     | 54/113 [00:55<01:10,  1.20s/it][Module1-TEN] Forward batches:  49%|████▊     | 55/113 [00:57<01:07,  1.17s/it][Module1-TEN] Forward batches:  50%|████▉     | 56/113 [00:58<01:04,  1.14s/it][Module1-TEN] Forward batches:  50%|█████     | 57/113 [00:59<01:01,  1.10s/it][Module1-TEN] Forward batches:  51%|█████▏    | 58/113 [01:00<01:01,  1.12s/it][Module1-TEN] Forward batches:  52%|█████▏    | 59/113 [01:01<00:59,  1.11s/it][Module1-TEN] Forward batches:  53%|█████▎    | 60/113 [01:02<00:59,  1.12s/it][Module1-TEN] Forward batches:  54%|█████▍    | 61/113 [01:04<01:08,  1.31s/it][Module1-TEN] Forward batches:  55%|█████▍    | 62/113 [01:05<01:01,  1.21s/it][Module1-TEN] Forward batches:  56%|█████▌    | 63/113 [01:07<01:14,  1.49s/it][Module1-TEN] Forward batches:  57%|█████▋    | 64/113 [01:09<01:18,  1.59s/it][Module1-TEN] Forward batches:  58%|█████▊    | 65/113 [01:11<01:24,  1.77s/it][Module1-TEN] Forward batches:  58%|█████▊    | 66/113 [01:13<01:30,  1.93s/it][Module1-TEN] Forward batches:  59%|█████▉    | 67/113 [01:15<01:30,  1.96s/it][Module1-TEN] Forward batches:  60%|██████    | 68/113 [01:17<01:27,  1.94s/it][Module1-TEN] Forward batches:  61%|██████    | 69/113 [01:19<01:27,  1.98s/it][Module1-TEN] Forward batches:  62%|██████▏   | 70/113 [01:22<01:35,  2.21s/it][Module1-TEN] Forward batches:  63%|██████▎   | 71/113 [01:24<01:26,  2.06s/it][Module1-TEN] Forward batches:  64%|██████▎   | 72/113 [01:26<01:26,  2.11s/it][Module1-TEN] Forward batches:  65%|██████▍   | 73/113 [01:28<01:21,  2.04s/it][Module1-TEN] Forward batches:  65%|██████▌   | 74/113 [01:31<01:36,  2.49s/it][Module1-TEN] Forward batches:  66%|██████▋   | 75/113 [01:34<01:31,  2.40s/it][Module1-TEN] Forward batches:  67%|██████▋   | 76/113 [01:35<01:16,  2.07s/it][Module1-TEN] Forward batches:  68%|██████▊   | 77/113 [01:36<01:01,  1.71s/it][Module1-TEN] Forward batches:  69%|██████▉   | 78/113 [01:37<00:52,  1.51s/it][Module1-TEN] Forward batches:  70%|██████▉   | 79/113 [01:38<00:46,  1.36s/it][Module1-TEN] Forward batches:  71%|███████   | 80/113 [01:39<00:41,  1.27s/it][Module1-TEN] Forward batches:  72%|███████▏  | 81/113 [01:40<00:37,  1.17s/it][Module1-TEN] Forward batches:  73%|███████▎  | 82/113 [01:41<00:34,  1.11s/it][Module1-TEN] Forward batches:  73%|███████▎  | 83/113 [01:42<00:30,  1.03s/it][Module1-TEN] Forward batches:  74%|███████▍  | 84/113 [01:43<00:33,  1.17s/it][Module1-TEN] Forward batches:  75%|███████▌  | 85/113 [01:44<00:31,  1.14s/it][Module1-TEN] Forward batches:  76%|███████▌  | 86/113 [01:45<00:29,  1.10s/it][Module1-TEN] Forward batches:  77%|███████▋  | 87/113 [01:46<00:27,  1.05s/it][Module1-TEN] Forward batches:  78%|███████▊  | 88/113 [01:47<00:26,  1.07s/it][Module1-TEN] Forward batches:  79%|███████▉  | 89/113 [01:48<00:25,  1.06s/it][Module1-TEN] Forward batches:  80%|███████▉  | 90/113 [01:50<00:26,  1.14s/it][Module1-TEN] Forward batches:  81%|████████  | 91/113 [01:51<00:24,  1.12s/it][Module1-TEN] Forward batches:  81%|████████▏ | 92/113 [01:52<00:23,  1.13s/it][Module1-TEN] Forward batches:  82%|████████▏ | 93/113 [01:53<00:21,  1.09s/it][Module1-TEN] Forward batches:  83%|████████▎ | 94/113 [01:54<00:20,  1.07s/it][Module1-TEN] Forward batches:  84%|████████▍ | 95/113 [01:55<00:19,  1.07s/it][Module1-TEN] Forward batches:  85%|████████▍ | 96/113 [01:56<00:17,  1.05s/it][Module1-TEN] Forward batches:  86%|████████▌ | 97/113 [01:57<00:16,  1.03s/it][Module1-TEN] Forward batches:  87%|████████▋ | 98/113 [01:58<00:15,  1.01s/it][Module1-TEN] Forward batches:  88%|████████▊ | 99/113 [01:59<00:16,  1.19s/it][Module1-TEN] Forward batches:  88%|████████▊ | 100/113 [02:01<00:15,  1.17s/it][Module1-TEN] Forward batches:  89%|████████▉ | 101/113 [02:02<00:14,  1.18s/it][Module1-TEN] Forward batches:  90%|█████████ | 102/113 [02:03<00:13,  1.21s/it][Module1-TEN] Forward batches:  91%|█████████ | 103/113 [02:04<00:11,  1.17s/it][Module1-TEN] Forward batches:  92%|█████████▏| 104/113 [02:06<00:11,  1.31s/it][Module1-TEN] Forward batches:  93%|█████████▎| 105/113 [02:07<00:10,  1.32s/it][Module1-TEN] Forward batches:  94%|█████████▍| 106/113 [02:08<00:09,  1.34s/it][Module1-TEN] Forward batches:  95%|█████████▍| 107/113 [02:10<00:07,  1.30s/it][Module1-TEN] Forward batches:  96%|█████████▌| 108/113 [02:11<00:06,  1.26s/it][Module1-TEN] Forward batches:  96%|█████████▋| 109/113 [02:12<00:05,  1.28s/it][Module1-TEN] Forward batches:  97%|█████████▋| 110/113 [02:13<00:03,  1.23s/it][Module1-TEN] Forward batches:  98%|█████████▊| 111/113 [02:15<00:02,  1.25s/it][Module1-TEN] Forward batches:  99%|█████████▉| 112/113 [02:16<00:01,  1.41s/it][Module1-TEN] Forward batches: 100%|██████████| 113/113 [02:17<00:00,  1.16s/it][Module1-TEN] Forward batches: 100%|██████████| 113/113 [02:17<00:00,  1.22s/it]
+[Module1-TEN] Collected hidden/logits for 33 layers (including embedding layer 0)
+[Module1-TEN] Computing per-layer proto accuracy + consistency vs final layer
+[Module1-TEN] Computing per-layer, per-dialect proto accuracy (P(TEN))
+[Module1-TEN] Running PCA + geometry metrics per layer
+[Module1-TEN] Layer 00: Sil=0.348, Entropy=1.386, BCSS/WCSS=147.882
+[Module1-TEN] Layer 01: Sil=0.410, Entropy=1.386, BCSS/WCSS=40.244
+[Module1-TEN] Layer 02: Sil=0.018, Entropy=1.386, BCSS/WCSS=1.918
+[Module1-TEN] Layer 03: Sil=0.055, Entropy=1.386, BCSS/WCSS=2.615
+[Module1-TEN] Layer 04: Sil=0.149, Entropy=1.386, BCSS/WCSS=4.076
+[Module1-TEN] Layer 05: Sil=0.164, Entropy=1.386, BCSS/WCSS=5.679
+[Module1-TEN] Layer 06: Sil=0.219, Entropy=1.386, BCSS/WCSS=8.127
+[Module1-TEN] Layer 07: Sil=0.255, Entropy=1.386, BCSS/WCSS=9.979
+[Module1-TEN] Layer 08: Sil=0.252, Entropy=1.386, BCSS/WCSS=9.245
+[Module1-TEN] Layer 09: Sil=0.247, Entropy=1.385, BCSS/WCSS=8.935
+[Module1-TEN] Layer 10: Sil=0.262, Entropy=1.386, BCSS/WCSS=10.283
+[Module1-TEN] Layer 11: Sil=0.292, Entropy=1.386, BCSS/WCSS=11.050
+[Module1-TEN] Layer 12: Sil=0.310, Entropy=1.385, BCSS/WCSS=12.772
+[Module1-TEN] Layer 13: Sil=0.297, Entropy=1.386, BCSS/WCSS=11.170
+[Module1-TEN] Layer 14: Sil=0.298, Entropy=1.385, BCSS/WCSS=10.894
+[Module1-TEN] Layer 15: Sil=0.360, Entropy=1.386, BCSS/WCSS=16.794
+[Module1-TEN] Layer 16: Sil=0.392, Entropy=1.386, BCSS/WCSS=19.388
+[Module1-TEN] Layer 17: Sil=0.434, Entropy=1.386, BCSS/WCSS=22.727
+[Module1-TEN] Layer 18: Sil=0.465, Entropy=1.385, BCSS/WCSS=29.822
+[Module1-TEN] Layer 19: Sil=0.476, Entropy=1.386, BCSS/WCSS=32.908
+[Module1-TEN] Layer 20: Sil=0.491, Entropy=1.385, BCSS/WCSS=36.621
+[Module1-TEN] Layer 21: Sil=0.477, Entropy=1.385, BCSS/WCSS=42.672
+[Module1-TEN] Layer 22: Sil=0.427, Entropy=1.385, BCSS/WCSS=37.954
+[Module1-TEN] Layer 23: Sil=0.412, Entropy=1.379, BCSS/WCSS=36.754
+[Module1-TEN] Layer 24: Sil=0.432, Entropy=1.376, BCSS/WCSS=34.340
+[Module1-TEN] Layer 25: Sil=0.344, Entropy=1.374, BCSS/WCSS=42.841
+[Module1-TEN] Layer 26: Sil=0.350, Entropy=1.372, BCSS/WCSS=40.881
+[Module1-TEN] Layer 27: Sil=0.270, Entropy=1.367, BCSS/WCSS=45.431
+[Module1-TEN] Layer 28: Sil=0.420, Entropy=1.361, BCSS/WCSS=45.831
+[Module1-TEN] Layer 29: Sil=0.409, Entropy=1.350, BCSS/WCSS=40.193
+[Module1-TEN] Layer 30: Sil=0.394, Entropy=1.340, BCSS/WCSS=48.484
+[Module1-TEN] Layer 31: Sil=0.463, Entropy=1.279, BCSS/WCSS=68.180
+[Module1-TEN] Layer 32: Sil=0.397, Entropy=0.725, BCSS/WCSS=90.344
+[Module1-TEN] Saved per-dialect metrics to: /scratch/ekata/projects/mcqa/mcqa-synergy/results/layer_metrics_TEN_by_dialect.csv
+[Module1-TEN] Saved layer-wise metrics to: /scratch/ekata/projects/mcqa/mcqa-synergy/results/layer_metrics_TEN.csv
+[Module1-TEN] Saved PCA centroids to     : /scratch/ekata/projects/mcqa/mcqa-synergy/results/pca_centroids_TEN.csv
+[Module1-TEN] Saved PCA points to        : /scratch/ekata/projects/mcqa/mcqa-synergy/results/pca_points_TEN.csv
+[Module1-TEN] Done.
+=== Module 1 finished at: Sat Nov  8 09:55:00 PM PST 2025 ===
+Result files in: /scratch/ekata/projects/mcqa/mcqa-synergy/results
+total 6.4M
+drwxrwxr-x 2 ekata ekata 4.0K Nov  8 21:15 Belebele
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 19:50 layer_metrics_EN_by_dialect.csv
+-rw-rw-r-- 1 ekata ekata 5.1K Nov  8 19:50 layer_metrics_EN.csv
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 18:20 layer_metrics_T_by_dialect.csv
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 18:20 layer_metrics_T.csv
+-rw-rw-r-- 1 ekata ekata 4.9K Nov  8 21:54 layer_metrics_TEN_by_dialect.csv
+-rw-rw-r-- 1 ekata ekata 5.0K Nov  8 21:54 layer_metrics_TEN.csv
+drwxr-xr-x 2 ekata ekata 4.0K Nov  8 21:15 log_out
+-rw-rw-r-- 1 ekata ekata  22K Nov  8 19:50 pca_centroids_EN.csv
+-rw-rw-r-- 1 ekata ekata  22K Nov  8 18:20 pca_centroids_T.csv
+-rw-rw-r-- 1 ekata ekata  22K Nov  8 21:54 pca_centroids_TEN.csv
+-rw-rw-r-- 1 ekata ekata 1.6M Nov  8 19:50 pca_points_EN.csv
+-rw-rw-r-- 1 ekata ekata 1.6M Nov  8 18:20 pca_points_T.csv
+-rw-rw-r-- 1 ekata ekata 1.6M Nov  8 21:54 pca_points_TEN.csv
