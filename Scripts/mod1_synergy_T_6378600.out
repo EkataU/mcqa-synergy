@@ -1,88 +1,0 @@
-=== Module 1: P(T) layer-wise analysis ===
-Job ID : 6378600
-Host   : gpu02
-Time   : Sat Nov  8 03:50:19 PM PST 2025
-CUDA GPUs:
-Sat Nov  8 15:50:19 2025       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
-+-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
-|  0%   26C    P8             31W /  300W |       0MiB /  46068MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|  No running processes found                                                             |
-+-----------------------------------------------------------------------------------------+
-Python path : /scratch/ekata/pyenv/bin/python
-Python ver  : Python 3.9.21
-Data CSV : /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
-Out dir  : /scratch/ekata/projects/mcqa/mcqa-synergy/results
-Model    : meta-llama/Meta-Llama-3.1-8B-Instruct
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-`torch_dtype` is deprecated! Use `dtype` instead!
-[Module1] Loading data from: /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
-[Module1] Total rows with valid correct_answer_num ∈ {1..4}: 900
-[Module1] Subsampled to 400 rows (max_samples=400)
-[Module1] Logging into Hugging Face Hub using HF_TOKEN / HUGGING_FACE_HUB_TOKEN
-[Module1] Loading model from Hugging Face: meta-llama/Meta-Llama-3.1-8B-Instruct
-[Module1] Device: cuda:0, dtype: float16
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.18it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.18it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.20it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.72it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.48it/s]
-[Module1] No bias term found in lm_head; setting lm_b = 0
-[Module1] Resolving digit token IDs for labels 1,2,3,4
-[Module1] Digit IDs: {1: 16, 2: 17, 3: 18, 4: 19}
-[Module1] Collecting hidden states + logits for 400 examples (P(T))
-[Module1] Forward batches:   0%|          | 0/50 [00:00<?, ?it/s][Module1] Forward batches:   2%|▏         | 1/50 [00:01<01:31,  1.87s/it][Module1] Forward batches:   4%|▍         | 2/50 [00:03<01:19,  1.66s/it][Module1] Forward batches:   6%|▌         | 3/50 [00:04<01:11,  1.51s/it][Module1] Forward batches:   8%|▊         | 4/50 [00:06<01:12,  1.58s/it][Module1] Forward batches:  10%|█         | 5/50 [00:07<01:11,  1.58s/it][Module1] Forward batches:  12%|█▏        | 6/50 [00:09<01:03,  1.45s/it][Module1] Forward batches:  14%|█▍        | 7/50 [00:10<01:05,  1.53s/it][Module1] Forward batches:  16%|█▌        | 8/50 [00:12<01:03,  1.51s/it][Module1] Forward batches:  18%|█▊        | 9/50 [00:13<00:58,  1.42s/it][Module1] Forward batches:  20%|██        | 10/50 [00:14<00:48,  1.22s/it][Module1] Forward batches:  22%|██▏       | 11/50 [00:15<00:47,  1.22s/it][Module1] Forward batches:  24%|██▍       | 12/50 [00:16<00:48,  1.27s/it][Module1] Forward batches:  26%|██▌       | 13/50 [00:18<00:50,  1.37s/it][Module1] Forward batches:  28%|██▊       | 14/50 [00:19<00:49,  1.36s/it][Module1] Forward batches:  30%|███       | 15/50 [00:20<00:43,  1.23s/it][Module1] Forward batches:  32%|███▏      | 16/50 [00:21<00:38,  1.12s/it][Module1] Forward batches:  34%|███▍      | 17/50 [00:23<00:39,  1.20s/it][Module1] Forward batches:  36%|███▌      | 18/50 [00:23<00:34,  1.06s/it][Module1] Forward batches:  38%|███▊      | 19/50 [00:25<00:35,  1.14s/it][Module1] Forward batches:  40%|████      | 20/50 [00:27<00:41,  1.38s/it][Module1] Forward batches:  42%|████▏     | 21/50 [00:28<00:37,  1.28s/it][Module1] Forward batches:  44%|████▍     | 22/50 [00:29<00:38,  1.38s/it][Module1] Forward batches:  46%|████▌     | 23/50 [00:31<00:39,  1.46s/it][Module1] Forward batches:  48%|████▊     | 24/50 [00:32<00:37,  1.44s/it][Module1] Forward batches:  50%|█████     | 25/50 [00:34<00:37,  1.50s/it][Module1] Forward batches:  52%|█████▏    | 26/50 [00:35<00:36,  1.51s/it][Module1] Forward batches:  54%|█████▍    | 27/50 [00:37<00:35,  1.54s/it][Module1] Forward batches:  56%|█████▌    | 28/50 [00:38<00:29,  1.34s/it][Module1] Forward batches:  58%|█████▊    | 29/50 [00:40<00:29,  1.42s/it][Module1] Forward batches:  60%|██████    | 30/50 [00:41<00:28,  1.41s/it][Module1] Forward batches:  62%|██████▏   | 31/50 [00:42<00:25,  1.36s/it][Module1] Forward batches:  64%|██████▍   | 32/50 [00:44<00:25,  1.42s/it][Module1] Forward batches:  66%|██████▌   | 33/50 [00:45<00:25,  1.50s/it][Module1] Forward batches:  68%|██████▊   | 34/50 [00:47<00:25,  1.60s/it][Module1] Forward batches:  70%|███████   | 35/50 [00:48<00:21,  1.42s/it][Module1] Forward batches:  72%|███████▏  | 36/50 [00:49<00:18,  1.29s/it][Module1] Forward batches:  74%|███████▍  | 37/50 [00:50<00:16,  1.26s/it][Module1] Forward batches:  76%|███████▌  | 38/50 [00:52<00:16,  1.38s/it][Module1] Forward batches:  78%|███████▊  | 39/50 [00:55<00:20,  1.83s/it][Module1] Forward batches:  80%|████████  | 40/50 [00:56<00:16,  1.68s/it][Module1] Forward batches:  82%|████████▏ | 41/50 [00:58<00:14,  1.61s/it][Module1] Forward batches:  84%|████████▍ | 42/50 [00:58<00:10,  1.34s/it][Module1] Forward batches:  86%|████████▌ | 43/50 [01:00<00:08,  1.27s/it][Module1] Forward batches:  88%|████████▊ | 44/50 [01:01<00:08,  1.36s/it][Module1] Forward batches:  90%|█████████ | 45/50 [01:03<00:07,  1.47s/it][Module1] Forward batches:  92%|█████████▏| 46/50 [01:04<00:05,  1.43s/it][Module1] Forward batches:  94%|█████████▍| 47/50 [01:05<00:03,  1.29s/it][Module1] Forward batches:  96%|█████████▌| 48/50 [01:07<00:02,  1.45s/it][Module1] Forward batches:  98%|█████████▊| 49/50 [01:09<00:01,  1.49s/it][Module1] Forward batches: 100%|██████████| 50/50 [01:11<00:00,  1.65s/it][Module1] Forward batches: 100%|██████████| 50/50 [01:11<00:00,  1.42s/it]
-[Module1] Collected hidden/logits for 33 layers (including embedding layer 0)
-[Module1] Computing per-layer proto accuracy + consistency vs final layer
-[Module1] Running PCA + geometry metrics per layer
-[Module1] Layer 00: Sil=0.397, Entropy=2.189, BCSS/WCSS=144.878
-[Module1] Layer 01: Sil=0.440, Entropy=2.189, BCSS/WCSS=38.585
-[Module1] Layer 02: Sil=0.086, Entropy=2.189, BCSS/WCSS=3.770
-[Module1] Layer 03: Sil=0.130, Entropy=2.189, BCSS/WCSS=4.596
-[Module1] Layer 04: Sil=0.225, Entropy=2.189, BCSS/WCSS=6.188
-[Module1] Layer 05: Sil=0.225, Entropy=2.189, BCSS/WCSS=7.785
-[Module1] Layer 06: Sil=0.272, Entropy=2.189, BCSS/WCSS=10.016
-[Module1] Layer 07: Sil=0.293, Entropy=2.189, BCSS/WCSS=11.379
-[Module1] Layer 08: Sil=0.291, Entropy=2.189, BCSS/WCSS=11.245
-[Module1] Layer 09: Sil=0.292, Entropy=2.189, BCSS/WCSS=11.187
-[Module1] Layer 10: Sil=0.299, Entropy=2.189, BCSS/WCSS=12.429
-[Module1] Layer 11: Sil=0.317, Entropy=2.189, BCSS/WCSS=12.931
-[Module1] Layer 12: Sil=0.329, Entropy=2.189, BCSS/WCSS=13.782
-[Module1] Layer 13: Sil=0.332, Entropy=2.189, BCSS/WCSS=14.145
-[Module1] Layer 14: Sil=0.322, Entropy=2.189, BCSS/WCSS=13.395
-[Module1] Layer 15: Sil=0.395, Entropy=2.189, BCSS/WCSS=19.548
-[Module1] Layer 16: Sil=0.414, Entropy=2.189, BCSS/WCSS=21.571
-[Module1] Layer 17: Sil=0.454, Entropy=2.189, BCSS/WCSS=25.915
-[Module1] Layer 18: Sil=0.477, Entropy=2.189, BCSS/WCSS=30.409
-[Module1] Layer 19: Sil=0.485, Entropy=2.189, BCSS/WCSS=33.093
-[Module1] Layer 20: Sil=0.505, Entropy=2.189, BCSS/WCSS=36.059
-[Module1] Layer 21: Sil=0.490, Entropy=2.189, BCSS/WCSS=41.218
-[Module1] Layer 22: Sil=0.441, Entropy=2.189, BCSS/WCSS=36.156
-[Module1] Layer 23: Sil=0.430, Entropy=2.189, BCSS/WCSS=35.081
-[Module1] Layer 24: Sil=0.446, Entropy=2.189, BCSS/WCSS=32.925
-[Module1] Layer 25: Sil=0.355, Entropy=2.189, BCSS/WCSS=39.260
-[Module1] Layer 26: Sil=0.368, Entropy=2.189, BCSS/WCSS=37.030
-[Module1] Layer 27: Sil=0.315, Entropy=2.189, BCSS/WCSS=39.902
-[Module1] Layer 28: Sil=0.351, Entropy=2.189, BCSS/WCSS=39.529
-[Module1] Layer 29: Sil=0.448, Entropy=2.189, BCSS/WCSS=36.174
-[Module1] Layer 30: Sil=0.465, Entropy=2.189, BCSS/WCSS=40.885
-[Module1] Layer 31: Sil=0.475, Entropy=2.189, BCSS/WCSS=56.425
-[Module1] Layer 32: Sil=0.484, Entropy=2.189, BCSS/WCSS=76.207
-[Module1] Saved layer-wise metrics to: /scratch/ekata/projects/mcqa/mcqa-synergy/results/layer_metrics_T.csv
-[Module1] Saved PCA points to       : /scratch/ekata/projects/mcqa/mcqa-synergy/results/pca_points_T.csv
-[Module1] Done.
-=== Module 1 finished at: Sat Nov  8 03:51:46 PM PST 2025 ===
-Result files in: /scratch/ekata/projects/mcqa/mcqa-synergy/results
-total 1020K
--rw-rw-r-- 1 ekata ekata 4.5K Nov  8 15:51 layer_metrics_T.csv
--rw-rw-r-- 1 ekata ekata 682K Nov  8 15:51 pca_points_T.csv
