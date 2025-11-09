@@ -1,0 +1,56 @@
+=== Module 1: P(T) layer-wise analysis ===
+Job ID : 6378595
+Host   : gpu02
+Time   : Sat Nov  8 03:32:46 PM PST 2025
+CUDA GPUs:
+Sat Nov  8 15:32:46 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
+|  0%   26C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python path : /scratch/ekata/pyenv/bin/python
+Python ver  : Python 3.9.21
+Data CSV : /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+Out dir  : /scratch/ekata/projects/mcqa/mcqa-synergy/results
+Model    : meta-llama/Meta-Llama-3.1-8B-Instruct
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[Module1] Loading data from: /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+[Module1] Total rows with valid correct_answer_num ∈ {1..4}: 900
+[Module1] Subsampled to 400 rows (max_samples=400)
+[Module1] Logging into Hugging Face Hub using HF_TOKEN / HUGGING_FACE_HUB_TOKEN
+[Module1] Loading model from Hugging Face: meta-llama/Meta-Llama-3.1-8B-Instruct
+[Module1] Device: cuda:0, dtype: float16
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:07<00:22,  7.55s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:14<00:14,  7.46s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:22<00:07,  7.52s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:24<00:00,  5.27s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:24<00:00,  6.09s/it]
+[Module1] Resolving digit token IDs for labels 1,2,3,4
+[Module1] Digit IDs: {1: 16, 2: 17, 3: 18, 4: 19}
+[Module1] Collecting hidden states + logits for 400 examples (P(T))
+[Module1] Forward batches:   0%|          | 0/50 [00:00<?, ?it/s][Module1] Forward batches:   0%|          | 0/50 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module1_synergy_T.py", line 423, in <module>
+    main()
+  File "/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module1_synergy_T.py", line 321, in main
+    pooled_T, layer_scores_T, final_pred_T, gold_T = collect_T_hidden_and_logits(
+  File "/scratch/ekata/pyenv/lib64/python3.9/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/scratch/ekata/projects/mcqa/mcqa-synergy/Scripts/module1_synergy_T.py", line 170, in collect_T_hidden_and_logits
+    logits = torch.matmul(h_last, lm_W.T) + lm_b  # (B,V)
+TypeError: unsupported operand type(s) for +: 'Tensor' and 'NoneType'
+=== Module 1 finished at: Sat Nov  8 03:34:11 PM PST 2025 ===
+Result files in: /scratch/ekata/projects/mcqa/mcqa-synergy/results
+total 0

@@ -1,0 +1,60 @@
+=== Running test_llama_hello job ===
+Job ID: 6378443
+Host : gpu04
+Time : Sat Nov  8 02:59:22 PM PST 2025
+Visible GPUs:
+Sat Nov  8 14:59:22 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:01:00.0 Off |                    0 |
+|  0%   24C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
+|  0%   24C    P8             25W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A40                     On  |   00000000:81:00.0 Off |                    0 |
+|  0%   25C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A40                     On  |   00000000:C1:00.0 Off |                    0 |
+|  0%   24C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python path: /scratch/ekata/pyenv/bin/python
+Python ver : Python 3.9.21
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+`torch_dtype` is deprecated! Use `dtype` instead!
+=== test_llama_hello.py ===
+Host: gpu04
+Working dir: /scratch/ekata/projects/mcqa/mcqa-synergy
+Model name: meta-llama/Meta-Llama-3.1-8B-Instruct
+[HELLO] Found HF token in environment; logging into Hugging Face Hub...
+[HELLO] Loading tokenizer...
+[HELLO] Loading model with device_map='auto' and torch.float16 ...
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:31<01:35, 31.95s/it]Fetching 4 files: 100%|██████████| 4/4 [00:31<00:00,  7.99s/it]
+The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:17,  5.89s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:12<00:12,  6.12s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:18<00:06,  6.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:19<00:00,  4.28s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:19<00:00,  4.94s/it]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[HELLO] Model loaded: num_layers=32, hidden_size=4096
+[HELLO] Running a tiny generation...
+
+[HELLO] Generation output:
+Say hello from the LLaMA model in one short sentence. I'm an AI designed to understand and generate human-like text, and I'm here to assist and
+
+[HELLO] Test complete. ✅
+=== Job finished at: Sat Nov  8 03:02:58 PM PST 2025 ===

@@ -1,0 +1,35 @@
+=== Module 1: P(T) layer-wise analysis ===
+Job ID : 6378625
+Host   : gpu02
+Time   : Sat Nov  8 04:15:56 PM PST 2025
+CUDA GPUs:
+Sat Nov  8 16:15:56 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                    0 |
+|  0%   25C    P8             23W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python path : /scratch/ekata/pyenv/bin/python
+Python ver  : Python 3.9.21
+Data CSV : /scratch/ekata/projects/mcqa/mcqa-synergy/Data/belebele_sampled.csv
+Out dir  : /scratch/ekata/projects/mcqa/mcqa-synergy/results
+Model    : meta-llama/Meta-Llama-3.1-8B-Instruct
+=== Module 1 finished at: Sat Nov  8 04:16:03 PM PST 2025 ===
+Result files in: /scratch/ekata/projects/mcqa/mcqa-synergy/results
+total 1020K
+-rw-rw-r-- 1 ekata ekata 4.5K Nov  8 15:51 layer_metrics_T.csv
+-rw-rw-r-- 1 ekata ekata 682K Nov  8 15:51 pca_points_T.csv
